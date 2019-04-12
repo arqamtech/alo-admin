@@ -1,0 +1,34 @@
+.cll:hover .main {
+  opacity: 0.3;
+}
+.cll:hover .editBtns {
+  opacity: 1;
+}
+.cll:hover .bname {
+  opacity: 1;
+}
+.bname {
+  position: absolute;
+  top: 40%;
+  right: 40%;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  opacity: 0;
+  margin: 0;
+  padding: 2%;
+  border: 1px black solid;
+  color: black;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.editBtns {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

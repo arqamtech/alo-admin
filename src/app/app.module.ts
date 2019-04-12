@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 import { NgxQRCodeModule } from 'ngx-qrcode2';
@@ -48,6 +49,7 @@ firebase.initializeApp(firebaseCred);
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     NgxQRCodeModule,
+    ReactiveFormsModule,
 
   ],
   providers: [

@@ -1,3 +1,57 @@
-<p>
-  add-banner works!
-</p>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item lines="none" class="content">
+    <h1 class="title">Add Banner</h1>
+  </ion-item>
+
+
+
+  <ion-card>
+    <ion-item lines="none">
+      <h2>*Please keep all the images of same ratios</h2>
+    </ion-item>
+    <form [formGroup]="this.bannerSer.banner">
+
+      <ion-item class="ion-margin">
+        <ion-label position="floating" color="primary">Name</ion-label>
+        <ion-input class="name" type="text" formControlName="Name" autofocus></ion-input>
+      </ion-item>
+
+      <ion-item class="select" lines="none" *ngIf="!img1">
+        <ion-button>Select Image</ion-button>
+        <!-- <ion-label>Select Image</ion-label> -->
+        <ion-input type="file" (change)="fileChange($event)" accept="image/x-png,image/gif,image/jpeg" id="file-input"
+          style="opacity: 0" #fileInp></ion-input>
+      </ion-item>
+
+
+
+      <ion-item *ngIf="img1" lines="none">
+
+        <img [src]="img1" class="imgView" />
+        <div class="editBtns">
+          <ion-button class="btnTrash" color="danger" (click)="removeImage()">
+            Remove
+          </ion-button>
+        </div>
+
+
+      </ion-item>
+
+      <ion-button color="primary" [disabled]="img1==null" (click)="addBanner()">Add Banner</ion-button>
+    </form>
+  </ion-card>
+
+
+
+
+
+
+</ion-content>

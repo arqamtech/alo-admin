@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BannersService } from 'src/app/Services/Banners/banners.service';
+import { NavController } from '@ionic/angular';
 
 
 @Component({
@@ -15,12 +16,23 @@ export class ViewBannersComponent implements OnInit {
 
   constructor(
     private bannersSer: BannersService,
+    private navCtrl: NavController,
   ) { }
 
   ngOnInit() {
     this.getUsers();
   }
+
+  gtAddBanner() {
+  this.navCtrl.navigateForward("/add-banner")
+  }
+
   getUsers() {
     this.banners = this.bannersSer.getBanners();
+  }
+
+
+  deleteBanner(banner) {
+    this.bannersSer.deleteBanner(banner);
   }
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './Components/MainPages/dashboard/dashboard.component';
 import { ViewBannersComponent } from './Components/Banners/view-banners/view-banners.component';
+import { AddBannerComponent } from './Components/Banners/add-banner/add-banner.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'banners',
     component: ViewBannersComponent,
+  },
+  {
+    path: 'add-banner',
+    component: AddBannerComponent,
   },
 ];
 
