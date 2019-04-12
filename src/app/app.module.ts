@@ -16,6 +16,12 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { firebaseCred } from './firebaseCred';
+import { DashboardComponent } from './Components/MainPages/dashboard/dashboard.component';
+import { LoginService } from './Services/Auth/login.service';
+import { BannersService } from './Services/Banners/banners.service';
+import { AddBannerComponent } from './Components/Banners/add-banner/add-banner.component';
+import { ViewBannersComponent } from './Components/Banners/view-banners/view-banners.component';
+import { LoginComponent } from './Components/Auth/login/login.component';
 
 
 firebase.initializeApp(firebaseCred);
@@ -23,8 +29,17 @@ firebase.initializeApp(firebaseCred);
 
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    AddBannerComponent,
+    ViewBannersComponent,
+    LoginComponent,
+
+  ],
+  entryComponents: [
+
+  ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -38,6 +53,8 @@ firebase.initializeApp(firebaseCred);
   providers: [
     StatusBar,
     SplashScreen,
+    LoginService,
+    BannersService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

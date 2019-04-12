@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './Components/MainPages/dashboard/dashboard.component';
+import { ViewBannersComponent } from './Components/Banners/view-banners/view-banners.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'dashboard',
     pathMatch: 'full'
   },
   {
-    path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
+    path: 'dashboard',
+    component: DashboardComponent,
   },
   {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  }
+    path: 'banners',
+    component: ViewBannersComponent,
+  },
 ];
 
 @NgModule({
@@ -23,4 +25,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

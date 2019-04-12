@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-toggle>
+        <ion-button>
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="ion-padding-right ion-margin-right" fill="clear" icon-only (click)="gtNoti($event)">
+        <ion-icon name="md-notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-item lines="none" class="content">
+    <h1 class="title">DASHBOARD</h1>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+
+      <ion-col size="6" size-md="2">
+        <ion-card>
+          <ion-card-content>
+            <p class="mNum">{{users}}</p>
+            <p class="mText">Users</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+
+      <ion-col size="6" size-md="2">
+        <ion-card>
+          <ion-card-content>
+            <p class="mNum">{{sellers}}</p>
+            <p class="mText">Sellers</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+
+
+      <ion-col size="6" size-md="2">
+        <ion-card>
+          <ion-card-content>
+            <p class="mNum">{{banners}}</p>
+            <p class="mText">Banners</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+
+      <ion-col size="6" size-md="2">
+        <ion-card>
+          <ion-card-content>
+            <p class="mNum">{{products}}</p>
+            <p class="mText">Products</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>
