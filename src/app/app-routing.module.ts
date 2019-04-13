@@ -6,6 +6,9 @@ import { AddBannerComponent } from './Components/Banners/add-banner/add-banner.c
 import { ViewProductsComponent } from './Components/Products/view-products/view-products.component';
 import { ProductDetailsComponent } from './Components/Products/product-details/product-details.component';
 import { ViewBarcodeComponent } from './Components/Products/view-barcode/view-barcode.component';
+import { FaqComponent } from './Components/Extras/Faqs/faq/faq.component';
+import { UserFaqComponent } from './Components/Extras/Faqs/user-faq/user-faq.component';
+import { VendorFaqComponent } from './Components/Extras/Faqs/vendor-faq/vendor-faq.component';
 
 const routes: Routes = [
   {
@@ -36,6 +39,18 @@ const routes: Routes = [
   {
     path: 'barcode/:id',
     component: ViewBarcodeComponent,
+  },
+  {
+    path: 'faqs',
+    component: FaqComponent,
+  },
+  {
+    path: 'faq-users',
+    component: UserFaqComponent,
+  },
+  {
+    path: 'faq-vendors',
+    component: VendorFaqComponent,
   },
 ];
 

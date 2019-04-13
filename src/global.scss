@@ -21,3 +21,6 @@
   opacity: 0.9;
   font-family: Roboto, sans-serif;
 }
+.split-pane-md.split-pane-visible > .split-pane-side {
+  max-width: 14%;
+}

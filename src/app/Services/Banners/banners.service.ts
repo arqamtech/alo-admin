@@ -73,7 +73,6 @@ export class BannersService {
   }
 
   delete(banner) {
-    console.log(banner.key);
 
     firebase.storage().ref("Banners/").child(banner.payload.val().Name).delete().then(() => {
       this.db.list(`Promotionals/Banners/${banner.key}`).remove().then(() => {

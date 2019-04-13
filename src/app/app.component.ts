@@ -25,6 +25,11 @@ export class AppComponent {
       url: '/products',
       icon: 'md-cube'
     },
+    {
+      title: 'Faqs',
+      url: '/faqs',
+      icon: 'md-help'
+    },
   ];
 
   constructor(

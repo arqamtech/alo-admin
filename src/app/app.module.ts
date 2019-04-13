@@ -27,6 +27,10 @@ import { ProductDetailsComponent } from './Components/Products/product-details/p
 import { ViewProductsComponent } from './Components/Products/view-products/view-products.component';
 import { ViewBarcodeComponent } from './Components/Products/view-barcode/view-barcode.component';
 import { ProductsService } from './Services/Products/products.service';
+import { FaqComponent } from './Components/Extras/Faqs/faq/faq.component';
+import { UserFaqComponent } from './Components/Extras/Faqs/user-faq/user-faq.component';
+import { VendorFaqComponent } from './Components/Extras/Faqs/vendor-faq/vendor-faq.component';
+import { FaqService } from './Services/Faqs/faq.service';
 
 
 firebase.initializeApp(firebaseCred);
@@ -43,7 +47,9 @@ firebase.initializeApp(firebaseCred);
     ProductDetailsComponent,
     ViewProductsComponent,
     ViewBarcodeComponent,
-
+    FaqComponent,
+    UserFaqComponent,
+    VendorFaqComponent,
   ],
   entryComponents: [
 
@@ -65,7 +71,7 @@ firebase.initializeApp(firebaseCred);
     LoginService,
     BannersService,
     ProductsService,
-
+    FaqService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
