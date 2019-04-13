@@ -23,6 +23,10 @@ import { BannersService } from './Services/Banners/banners.service';
 import { AddBannerComponent } from './Components/Banners/add-banner/add-banner.component';
 import { ViewBannersComponent } from './Components/Banners/view-banners/view-banners.component';
 import { LoginComponent } from './Components/Auth/login/login.component';
+import { ProductDetailsComponent } from './Components/Products/product-details/product-details.component';
+import { ViewProductsComponent } from './Components/Products/view-products/view-products.component';
+import { ViewBarcodeComponent } from './Components/Products/view-barcode/view-barcode.component';
+import { ProductsService } from './Services/Products/products.service';
 
 
 firebase.initializeApp(firebaseCred);
@@ -36,6 +40,9 @@ firebase.initializeApp(firebaseCred);
     AddBannerComponent,
     ViewBannersComponent,
     LoginComponent,
+    ProductDetailsComponent,
+    ViewProductsComponent,
+    ViewBarcodeComponent,
 
   ],
   entryComponents: [
@@ -57,6 +64,8 @@ firebase.initializeApp(firebaseCred);
     SplashScreen,
     LoginService,
     BannersService,
+    ProductsService,
+
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -20,6 +20,11 @@ export class AppComponent {
       url: '/banners',
       icon: 'md-images'
     },
+    {
+      title: 'Products',
+      url: '/products',
+      icon: 'md-cube'
+    },
   ];
 
   constructor(

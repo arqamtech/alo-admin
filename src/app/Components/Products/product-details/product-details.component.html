@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item lines="none" class="content">
+    <h1 class="title">Product Detail</h1>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-button class="ion-float-right" (click)="vProduct()" *ngIf="!ver">Verify Product</ion-button>
+      <ion-button class="ion-float-right" (click)="uProduct()" *ngIf="ver">Unverify Product</ion-button>
+    </ion-row>
+    <ion-row>
+
+      <ion-col size="12" size-md="6">
+        <ion-card>
+          <ion-card-content>
+
+            <ion-item>
+              <p slot="start" class="heads">Product Name</p>
+              <p slot="end">{{product.Name}}</p>
+            </ion-item>
+
+
+            <ion-item>
+              <p slot="start" class="heads">Category</p>
+              <p slot="end">{{product.Category}}</p>
+            </ion-item>
+
+            <ion-item>
+              <p slot="start" class="heads">Quantity</p>
+              <p slot="end">{{product.Quantity}}</p>
+            </ion-item>
+
+            <ion-item *ngIf="product.Color">
+              <p slot="start" class="heads">Color</p>
+              <p slot="end">{{product.Color}}</p>
+            </ion-item>
+
+            <ion-item *ngIf="product.Size">
+              <p slot="start" class="heads">Size</p>
+              <p slot="end">{{product.Size}}</p>
+            </ion-item>
+
+
+            <ion-item>
+              <p slot="start" class="heads">Sales</p>
+              <p slot="end">{{product.Sales}}</p>
+            </ion-item>
+
+
+            <ion-item>
+              <p slot="start" class="heads">Status</p>
+              <p slot="end">{{product.Status}}</p>
+            </ion-item>
+
+
+            <ion-item>
+              <p slot="start" class="heads">Product Added Date</p>
+              <p slot="end">{{product.TimeStamp | date : 'medium'}}</p>
+            </ion-item>
+
+
+
+
+
+
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+
+
+      <ion-col size="12" size-md="6">
+
+        <ion-card>
+          <ion-card-content>
+            <img [src]="product.ImageUrl" />
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+
+      <ion-col size="12" size-md="6">
+
+        <ion-card *ngIf="product.key">
+          <ion-card-content>
+            <ion-button float-right (click)="viewBar()">Print</ion-button>
+            <ngx-qrcode [qrc-value]="product.key"></ngx-qrcode>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+
+
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>

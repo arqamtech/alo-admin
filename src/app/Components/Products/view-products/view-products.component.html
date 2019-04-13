@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-toggle>
+        <ion-button>
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="ion-padding-right ion-margin-right" fill="clear" icon-only (click)="gtNoti($event)">
+        <ion-icon name="md-notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="none" class="content">
+    <h1 class="title">PRODUCTS</h1>
+  </ion-item>
+
+
+  <ion-grid>
+    <ion-toolbar color="primary">
+      <ion-row>
+        <ion-col size="12" size-md="2">Product Name</ion-col>
+        <ion-col size="12" size-md="2">Category</ion-col>
+        <ion-col size="12" size-md="1">Quantity</ion-col>
+        <ion-col size="12" size-md="2">Status</ion-col>
+        <ion-col size="12" size-md="1">Sales</ion-col>
+        <ion-col size="12" size-md="2">Store Name</ion-col>
+      </ion-row>
+    </ion-toolbar>
+
+    <ion-item class="mainTable" *ngFor="let p of products | async">
+      <ion-col size="12" size-md="2">{{p.payload.val().Name}}</ion-col>
+      <ion-col size="12" size-md="2">{{p.payload.val().Category}}</ion-col>
+      <ion-col size="12" size-md="1">{{p.payload.val().Quantity}}</ion-col>
+      <ion-col size="12" size-md="2">{{p.payload.val().Status}}</ion-col>
+      <ion-col size="12" size-md="1">{{p.payload.val().Sales}}</ion-col>
+      <ion-col size="12" size-md="2">{{p.payload.val().StoreName}}</ion-col>
+
+      <ion-col size="12" size-md="1">
+        <a [href]="p.payload.val().ImageUrl" target="_blank">
+          <ion-button fill="clear">
+            <ion-icon name="ios-image"></ion-icon>
+          </ion-button>
+        </a>
+      </ion-col>
+
+      <ion-col size="12" size-md="1">
+        <ion-button fill="clear" (click)="gtPDetails(p)">
+          <ion-icon name="arrow-dropright-circle"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+    </ion-item>
+
+  </ion-grid>
+
+  <!-- <ion-item *ngFor="let p of products | async">
+    {{p | json}}
+  </ion-item> -->
+
+
+</ion-content>
