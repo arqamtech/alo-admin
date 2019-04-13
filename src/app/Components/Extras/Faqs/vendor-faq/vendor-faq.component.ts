@@ -10,14 +10,13 @@ import { Observable } from 'rxjs';
 export class VendorFaqComponent implements OnInit {
 
 
-  faqs: Observable<any>;
+  faqs: Observable<any>=this.faqService.getUserFaqsV();
 
   constructor(
     private faqService: FaqService,
   ) { }
 
   ngOnInit() {
-    this.getFaqs();
   }
 
 
@@ -34,9 +33,7 @@ export class VendorFaqComponent implements OnInit {
     this.faqService.deleteFaqV(f);
   }
 
-  getFaqs() {
-    this.faqs = this.faqService.getUserFaqsV()
-  }
+
 
 
 }

@@ -26,6 +26,11 @@ export class AppComponent {
       icon: 'md-cube'
     },
     {
+      title: 'Users',
+      url: '/users',
+      icon: 'ios-people'
+    },
+    {
       title: 'Faqs',
       url: '/faqs',
       icon: 'md-help'

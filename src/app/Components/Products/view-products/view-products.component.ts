@@ -10,7 +10,7 @@ import { NavController } from '@ionic/angular';
 })
 export class ViewProductsComponent implements OnInit {
 
-  products: Observable<any>;
+  products: Observable<any> = this.prodService.getProducts();
 
   constructor(
     private prodService: ProductsService,
@@ -18,12 +18,8 @@ export class ViewProductsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getProds();
   }
 
-  getProds() {
-    this.products = this.prodService.getProducts();
-  }
   gtPDetails(p) {
     this.navCtrl.navigateForward(`product-details/${p.key}`)
   }

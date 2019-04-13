@@ -31,6 +31,9 @@ import { FaqComponent } from './Components/Extras/Faqs/faq/faq.component';
 import { UserFaqComponent } from './Components/Extras/Faqs/user-faq/user-faq.component';
 import { VendorFaqComponent } from './Components/Extras/Faqs/vendor-faq/vendor-faq.component';
 import { FaqService } from './Services/Faqs/faq.service';
+import { ListUsersComponent } from './Components/Users/list-users/list-users.component';
+import { UserDetailsComponent } from './Components/Users/user-details/user-details.component';
+import { UsersService } from './Services/Users/users.service';
 
 
 firebase.initializeApp(firebaseCred);
@@ -50,6 +53,8 @@ firebase.initializeApp(firebaseCred);
     FaqComponent,
     UserFaqComponent,
     VendorFaqComponent,
+    ListUsersComponent,
+    UserDetailsComponent,
   ],
   entryComponents: [
 
@@ -71,6 +76,7 @@ firebase.initializeApp(firebaseCred);
     LoginService,
     BannersService,
     ProductsService,
+    UsersService,
     FaqService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

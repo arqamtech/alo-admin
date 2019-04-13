@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item lines="none" lines="none" class="content">
+    <h1 class="title">User Detail</h1>
+  </ion-item>
+
+
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col size="12" size-md="10" offset-md="1">
+
+
+
+        <ion-row>
+          <ion-col size="12" size-md="6">
+            <ion-card>
+              <ion-card-content>
+                <ion-item lines="none">
+                  <p slot="start" class="heads">Name</p>
+                  <p slot="end"> {{user.Name}} </p>
+                </ion-item>
+                <ion-item lines="none">
+                  <p slot="start" class="heads">Email</p>
+                  <p slot="end"> {{user.Email}} </p>
+                </ion-item>
+                <ion-item lines="none">
+                  <p slot="start" class="heads">Phone</p>
+                  <p slot="end"> {{user.Phone}} </p>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+
+
+
+            <ion-row>
+              <ion-col size="12">
+                <ion-card>
+                  <ion-card-header>
+                    <ion-card-title>Cart</ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                    <ion-item lines="none">
+                      <p slot="start" class="heads">Cart Value</p>
+                      <p slot="end"> {{cart.CartValue}} </p>
+                    </ion-item>
+
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+          <ion-col size="12" size-md="6">
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title>Orders</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+</ion-content>

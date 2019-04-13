@@ -22,41 +22,45 @@
 
 
   <ion-grid>
-    <ion-toolbar color="primary">
-      <ion-row>
-        <ion-col size="12" size-md="2">Product Name</ion-col>
-        <ion-col size="12" size-md="2">Category</ion-col>
-        <ion-col size="12" size-md="1">Quantity</ion-col>
-        <ion-col size="12" size-md="2">Status</ion-col>
-        <ion-col size="12" size-md="1">Sales</ion-col>
-        <ion-col size="12" size-md="2">Store Name</ion-col>
-      </ion-row>
-    </ion-toolbar>
+    <ion-row>
+      <ion-col size="12" size-md="8" offset-md="2">
 
-    <ion-item class="mainTable" *ngFor="let p of products | async">
-      <ion-col size="12" size-md="2">{{p.payload.val().Name}}</ion-col>
-      <ion-col size="12" size-md="2">{{p.payload.val().Category}}</ion-col>
-      <ion-col size="12" size-md="1">{{p.payload.val().Quantity}}</ion-col>
-      <ion-col size="12" size-md="2">{{p.payload.val().Status}}</ion-col>
-      <ion-col size="12" size-md="1">{{p.payload.val().Sales}}</ion-col>
-      <ion-col size="12" size-md="2">{{p.payload.val().StoreName}}</ion-col>
+        <ion-toolbar color="primary">
+          <ion-row>
+            <ion-col size="12" size-md="2">Product Name</ion-col>
+            <ion-col size="12" size-md="2">Category</ion-col>
+            <ion-col size="12" size-md="1">Quantity</ion-col>
+            <ion-col size="12" size-md="2">Status</ion-col>
+            <ion-col size="12" size-md="1">Sales</ion-col>
+            <ion-col size="12" size-md="2">Store Name</ion-col>
+          </ion-row>
+        </ion-toolbar>
 
-      <ion-col size="12" size-md="1">
-        <a [href]="p.payload.val().ImageUrl" target="_blank">
-          <ion-button fill="clear">
-            <ion-icon name="ios-image"></ion-icon>
-          </ion-button>
-        </a>
+        <ion-item class="mainTable" *ngFor="let p of products | async">
+          <ion-col size="12" size-md="2">{{p.payload.val().Name}}</ion-col>
+          <ion-col size="12" size-md="2">{{p.payload.val().Category}}</ion-col>
+          <ion-col size="12" size-md="1">{{p.payload.val().Quantity}}</ion-col>
+          <ion-col size="12" size-md="2">{{p.payload.val().Status}}</ion-col>
+          <ion-col size="12" size-md="1">{{p.payload.val().Sales}}</ion-col>
+          <ion-col size="12" size-md="2">{{p.payload.val().StoreName}}</ion-col>
+
+          <ion-col size="12" size-md="1">
+            <a [href]="p.payload.val().ImageUrl" target="_blank">
+              <ion-button fill="clear">
+                <ion-icon name="ios-image"></ion-icon>
+              </ion-button>
+            </a>
+          </ion-col>
+
+          <ion-col size="12" size-md="1">
+            <ion-button fill="clear" (click)="gtPDetails(p)">
+              <ion-icon name="arrow-dropright-circle"></ion-icon>
+            </ion-button>
+          </ion-col>
+
+        </ion-item>
       </ion-col>
-
-      <ion-col size="12" size-md="1">
-        <ion-button fill="clear" (click)="gtPDetails(p)">
-          <ion-icon name="arrow-dropright-circle"></ion-icon>
-        </ion-button>
-      </ion-col>
-
-    </ion-item>
-
+    </ion-row>
   </ion-grid>
 
   <!-- <ion-item *ngFor="let p of products | async">

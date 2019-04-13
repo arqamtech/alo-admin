@@ -9,6 +9,8 @@ import { ViewBarcodeComponent } from './Components/Products/view-barcode/view-ba
 import { FaqComponent } from './Components/Extras/Faqs/faq/faq.component';
 import { UserFaqComponent } from './Components/Extras/Faqs/user-faq/user-faq.component';
 import { VendorFaqComponent } from './Components/Extras/Faqs/vendor-faq/vendor-faq.component';
+import { ListUsersComponent } from './Components/Users/list-users/list-users.component';
+import { UserDetailsComponent } from './Components/Users/user-details/user-details.component';
 
 const routes: Routes = [
   {
@@ -51,6 +53,14 @@ const routes: Routes = [
   {
     path: 'faq-vendors',
     component: VendorFaqComponent,
+  },
+  {
+    path: 'users',
+    component: ListUsersComponent,
+  },
+  {
+    path: 'user/:id',
+    component: UserDetailsComponent,
   },
 ];
 

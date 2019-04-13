@@ -11,7 +11,7 @@ import { NavController } from '@ionic/angular';
 })
 export class ViewBannersComponent implements OnInit {
 
-  banners: Observable<any>;
+  banners: Observable<any> = this.bannersSer.getBanners();
 
 
   constructor(
@@ -20,16 +20,12 @@ export class ViewBannersComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getUsers();
   }
 
   gtAddBanner() {
-  this.navCtrl.navigateForward("/add-banner")
+    this.navCtrl.navigateForward("/add-banner")
   }
 
-  getUsers() {
-    this.banners = this.bannersSer.getBanners();
-  }
 
 
   deleteBanner(banner) {
