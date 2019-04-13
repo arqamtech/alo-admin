@@ -11,6 +11,8 @@ import { UserFaqComponent } from './Components/Extras/Faqs/user-faq/user-faq.com
 import { VendorFaqComponent } from './Components/Extras/Faqs/vendor-faq/vendor-faq.component';
 import { ListUsersComponent } from './Components/Users/list-users/list-users.component';
 import { UserDetailsComponent } from './Components/Users/user-details/user-details.component';
+import { ListSellersComponent } from './Components/Sellers/list-sellers/list-sellers.component';
+import { SellerDetailsComponent } from './Components/Sellers/seller-details/seller-details.component';
 
 const routes: Routes = [
   {
@@ -61,6 +63,14 @@ const routes: Routes = [
   {
     path: 'user/:id',
     component: UserDetailsComponent,
+  },
+  {
+    path: 'sellers',
+    component: ListSellersComponent,
+  },
+  {
+    path: 'seller/:id',
+    component: SellerDetailsComponent,
   },
 ];
 

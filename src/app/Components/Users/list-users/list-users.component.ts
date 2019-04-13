@@ -22,6 +22,5 @@ export class ListUsersComponent implements OnInit {
 
   gtUserDetails(u) {
     this.navCtrl.navigateForward(`user/${u.key}`)
-
   }
 }

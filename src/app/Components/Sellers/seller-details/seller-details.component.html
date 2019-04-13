@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item lines="none" lines="none" class="content">
+    <h1 class="title">Seller Detail</h1>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6" offset-md="3">
+        <ion-row>
+          <ion-col size="12">
+            <ion-button class="ion-float-right" (click)="vSeller()" *ngIf="!ver">Verify Seller</ion-button>
+            <ion-button class="ion-float-right" (click)="uSeller()" *ngIf="ver">Unverify Seller</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-card>
+          <ion-card-content>
+
+
+
+            <ion-item lines="none">
+              <p slot="start" class="heads">Store Name</p>
+              <p slot="end">{{seller.StoreName}}</p>
+            </ion-item>
+
+            <ion-item lines="none">
+              <p slot="start" class="heads">Status</p>
+              <p slot="end">{{seller.Status}}</p>
+            </ion-item>
+
+            <ion-item lines="none">
+              <p slot="start" class="heads">Store Category</p>
+              <p slot="end">{{seller.StoreCategory}}</p>
+            </ion-item>
+
+            <ion-item lines="none">
+              <p slot="start" class="heads">PhoneNumber</p>
+              <p slot="end">{{seller.PhoneNumber}}</p>
+            </ion-item>
+
+            <ion-item lines="none">
+              <p slot="start" class="heads">Owner Name</p>
+              <p slot="end">{{seller.OwnerName}}</p>
+            </ion-item>
+
+            <ion-item lines="none">
+              <p slot="start" class="heads">Email</p>
+              <p slot="end">{{seller.Email}}</p>
+            </ion-item>
+
+            <ion-item lines="none">
+              <p slot="start" class="heads">Store Location</p>
+              <p slot="end">{{seller.StoreLocation}}</p>
+            </ion-item>
+
+            <ion-item lines="none">
+              <p slot="start" class="heads">Visible to Users</p>
+              <p slot="end">{{seller.Visible}}</p>
+            </ion-item>
+
+            <ion-item lines="none">
+              <p slot="start" class="heads">Store Created</p>
+              <p slot="end">{{seller.TimeStamp}}</p>
+            </ion-item>
+
+          </ion-card-content>
+        </ion-card>
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

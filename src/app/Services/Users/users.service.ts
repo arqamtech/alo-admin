@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { ToastController, NavController } from '@ionic/angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 @Injectable({
@@ -11,8 +10,6 @@ export class UsersService {
 
   constructor(
     public db: AngularFireDatabase,
-    public navCtrl: NavController,
-    public toastCtrl: ToastController,
   ) { }
 
 
@@ -26,14 +23,5 @@ export class UsersService {
 
 
 
-
-
-  async presentToast(msg) {
-    const toast = await this.toastCtrl.create({
-      message: msg,
-      duration: 4000,
-    });
-    toast.present();
-  }
 
 }
