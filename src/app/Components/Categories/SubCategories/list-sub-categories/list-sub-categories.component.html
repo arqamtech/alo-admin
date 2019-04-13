@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item lines="none" lines="none" class="content">
+    <h1 class="title">Sub-Categories of {{cat.Name }}</h1>
+  </ion-item>
+
+
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" size-md="3" *ngFor="let s of subCats " (click)="gtSubCatI(s.key)">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              {{s.Name}}
+            </ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>

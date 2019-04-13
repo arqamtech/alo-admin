@@ -13,6 +13,9 @@ import { ListUsersComponent } from './Components/Users/list-users/list-users.com
 import { UserDetailsComponent } from './Components/Users/user-details/user-details.component';
 import { ListSellersComponent } from './Components/Sellers/list-sellers/list-sellers.component';
 import { SellerDetailsComponent } from './Components/Sellers/seller-details/seller-details.component';
+import { ListTopCategoriesComponent } from './Components/Categories/TopCategories/list-top-categories/list-top-categories.component';
+import { ListSubCategoriesComponent } from './Components/Categories/SubCategories/list-sub-categories/list-sub-categories.component';
+import { ListSubCatItemsComponent } from './Components/Categories/SubCatItem/list-sub-cat-items/list-sub-cat-items.component';
 
 const routes: Routes = [
   {
@@ -72,8 +75,19 @@ const routes: Routes = [
     path: 'seller/:id',
     component: SellerDetailsComponent,
   },
+  {
+    path: 'categories',
+    component: ListTopCategoriesComponent,
+  },
+  {
+    path: 'sub-categories/:id',
+    component: ListSubCategoriesComponent,
+  },
+  {
+    path: 'items-sub-categories/:id',
+    component: ListSubCatItemsComponent,
+  },
 ];
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

@@ -21,6 +21,11 @@ export class AppComponent {
       icon: 'md-images'
     },
     {
+      title: 'Categories',
+      url: '/categories',
+      icon: 'logo-buffer'
+    },
+    {
       title: 'Sellers',
       url: '/sellers',
       icon: 'logo-ionitron'
