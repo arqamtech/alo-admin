@@ -1,0 +1,5 @@
+<ion-list>
+  <ion-item *ngFor="let n of notis | async" href="/notifications">
+    {{n.payload.val().Name}}
+  </ion-item>
+</ion-list>

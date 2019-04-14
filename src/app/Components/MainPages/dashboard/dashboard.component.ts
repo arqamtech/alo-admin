@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { MenuController } from '@ionic/angular';
+import { MenuController, PopoverController } from '@ionic/angular';
+import { NotificationComponent } from '../../Notification/notification/notification.component';
+import { NotiPopComponent } from '../../Notification/noti-pop/noti-pop.component';
 
 
 @Component({
@@ -10,7 +12,7 @@ import { MenuController } from '@ionic/angular';
 })
 export class DashboardComponent implements OnInit {
 
-  users: number=0;
+  users: number = 0;
   sellers: number = 0;
   products: number = 0;
   banners: number = 0;
@@ -22,6 +24,7 @@ export class DashboardComponent implements OnInit {
   constructor(
     private db: AngularFireDatabase,
     private menuCtrl: MenuController,
+    private popoverCtrl: PopoverController,
   ) {
     this.menuCtrl.enable(true);
   }
@@ -53,10 +56,13 @@ export class DashboardComponent implements OnInit {
       this.banners = snap.length;
     })
   }
-  // gtNoti(myEvent) {
-  //   let popover = this.popoverCtrl.create(NotiPopPage);
-  //   popover.present({
-  //     ev: myEvent
-  //   });
-  // }
+
+  async  gtNoti(ev: any) {
+    const popover = await this.popoverCtrl.create({
+      component: NotiPopComponent,
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
+  }
 }

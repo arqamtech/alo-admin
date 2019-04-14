@@ -45,6 +45,11 @@ import { ListSubCategoriesComponent } from './Components/Categories/SubCategorie
 import { AddSubCatItemsComponent } from './Components/Categories/SubCatItem/add-sub-cat-items/add-sub-cat-items.component';
 import { CateoriesService } from './Services/Categories/cateories.service';
 import { SpinnerComponent } from './Components/UI/spinner/spinner.component';
+import { NotificationComponent } from './Components/Notification/notification/notification.component';
+import { NotificationService } from './Services/Notifications/notification.service';
+import { NotiPopComponent } from './Components/Notification/noti-pop/noti-pop.component';
+import { TopBarComponent } from './Components/UI/top-bar/top-bar.component';
+import { TopPushBarComponent } from './Components/UI/top-push-bar/top-push-bar.component';
 
 
 firebase.initializeApp(firebaseCred);
@@ -74,13 +79,19 @@ firebase.initializeApp(firebaseCred);
     ListSubCategoriesComponent,
     AddSubCatItemsComponent,
     ListSubCatItemsComponent,
-
     SpinnerComponent,
+    TopBarComponent,
+    TopPushBarComponent,
+    NotificationComponent,
+    NotiPopComponent,
   ],
   entryComponents: [
     AddSubCategoriesComponent,
     AddSubCatItemsComponent,
     AddTopCategoriesComponent,
+    NotiPopComponent,
+    TopBarComponent,
+    TopPushBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,6 +114,7 @@ firebase.initializeApp(firebaseCred);
     FaqService,
     SellerService,
     CateoriesService,
+    NotificationService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

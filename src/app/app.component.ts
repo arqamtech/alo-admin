@@ -41,6 +41,11 @@ export class AppComponent {
       icon: 'ios-people'
     },
     {
+      title: 'Notifications',
+      url: '/notifications',
+      icon: 'md-notifications'
+    },
+    {
       title: 'Faqs',
       url: '/faqs',
       icon: 'md-help'

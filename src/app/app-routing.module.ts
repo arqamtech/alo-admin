@@ -16,6 +16,7 @@ import { SellerDetailsComponent } from './Components/Sellers/seller-details/sell
 import { ListTopCategoriesComponent } from './Components/Categories/TopCategories/list-top-categories/list-top-categories.component';
 import { ListSubCategoriesComponent } from './Components/Categories/SubCategories/list-sub-categories/list-sub-categories.component';
 import { ListSubCatItemsComponent } from './Components/Categories/SubCatItem/list-sub-cat-items/list-sub-cat-items.component';
+import { NotificationComponent } from './Components/Notification/notification/notification.component';
 
 const routes: Routes = [
   {
@@ -86,6 +87,10 @@ const routes: Routes = [
   {
     path: 'items-sub-categories/:id',
     component: ListSubCatItemsComponent,
+  },
+  {
+    path: 'notifications',
+    component: NotificationComponent,
   },
 ];
 @NgModule({
