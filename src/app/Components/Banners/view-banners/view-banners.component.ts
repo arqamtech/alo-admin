@@ -11,8 +11,9 @@ import { NavController } from '@ionic/angular';
 })
 export class ViewBannersComponent implements OnInit {
 
-  banners: Observable<any> = this.bannersSer.getBanners();
+  banners: Observable<any>;
 
+  showSpinner: boolean = true;
 
   constructor(
     private bannersSer: BannersService,
@@ -20,6 +21,8 @@ export class ViewBannersComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.banners = this.bannersSer.getBanners();
+    this.banners.subscribe(() => this.showSpinner = false);
   }
 
   gtAddBanner() {

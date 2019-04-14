@@ -44,6 +44,7 @@ import { ListSubCatItemsComponent } from './Components/Categories/SubCatItem/lis
 import { ListSubCategoriesComponent } from './Components/Categories/SubCategories/list-sub-categories/list-sub-categories.component';
 import { AddSubCatItemsComponent } from './Components/Categories/SubCatItem/add-sub-cat-items/add-sub-cat-items.component';
 import { CateoriesService } from './Services/Categories/cateories.service';
+import { SpinnerComponent } from './Components/UI/spinner/spinner.component';
 
 
 firebase.initializeApp(firebaseCred);
@@ -72,7 +73,9 @@ firebase.initializeApp(firebaseCred);
     AddSubCategoriesComponent,
     ListSubCategoriesComponent,
     AddSubCatItemsComponent,
-    ListSubCatItemsComponent
+    ListSubCatItemsComponent,
+
+    SpinnerComponent,
   ],
   entryComponents: [
 

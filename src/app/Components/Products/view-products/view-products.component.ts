@@ -10,14 +10,16 @@ import { NavController } from '@ionic/angular';
 })
 export class ViewProductsComponent implements OnInit {
 
-  products: Observable<any> = this.prodService.getProducts();
-
+  products: Observable<any>;
+  showSpinner: boolean = true;
   constructor(
     private prodService: ProductsService,
     private navCtrl: NavController,
   ) { }
 
   ngOnInit() {
+    this.products = this.prodService.getProducts();
+    this.products.subscribe(() => this.showSpinner = false);
   }
 
   gtPDetails(p) {

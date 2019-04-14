@@ -10,14 +10,18 @@ import { Observable } from 'rxjs';
 })
 export class ListSellersComponent implements OnInit {
 
-  sellers: Observable<any> = this.sellerService.getSellers();
+  sellers: Observable<any>;
+  showSpinner: boolean = true;
 
   constructor(
     private sellerService: SellerService,
     private navCtrl: NavController,
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.sellers = this.sellerService.getSellers();
+    this.sellers.subscribe(() => this.showSpinner = false);
+  }
 
 
   gtSellerDetails(s) {

@@ -45,6 +45,7 @@
             <ion-col size="12" size-md="3">Phone Number</ion-col>
           </ion-row>
         </ion-toolbar>
+        <app-spinner *ngIf="showSpinner" ></app-spinner>
 
         <ion-item class="mainTable" *ngFor="let u of users | async">
           <ion-col size="12" size-md="3">{{u.payload.val().Name}}</ion-col>

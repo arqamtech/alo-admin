@@ -37,6 +37,7 @@
         </ion-card>
 
 
+        <app-spinner *ngIf="showSpinner"></app-spinner>
 
 
         <ion-card *ngFor="let q of faqs | async">

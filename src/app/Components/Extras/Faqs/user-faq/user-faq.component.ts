@@ -9,13 +9,16 @@ import { Observable } from 'rxjs';
 })
 export class UserFaqComponent implements OnInit {
 
-  faqs: Observable<any> = this.faqService.getUserFaqs();
+  faqs: Observable<any>;
+  showSpinner: boolean = true;
 
   constructor(
     private faqService: FaqService,
   ) { }
 
   ngOnInit() {
+    this.faqs = this.faqService.getUserFaqs();
+    this.faqs.subscribe(() => this.showSpinner = false);
   }
 
 

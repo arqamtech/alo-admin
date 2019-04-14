@@ -46,13 +46,14 @@
             <ion-col size="12" size-md="1"></ion-col>
           </ion-row>
         </ion-toolbar>
+        <app-spinner *ngIf="showSpinner"></app-spinner>
 
         <ion-item class="mainTable" *ngFor="let s of sellers | async">
 
           <ion-col size="12" size-md="3">{{s.payload.val().StoreName}}</ion-col>
           <ion-col size="12" size-md="2">{{s.payload.val().OwnerName}}</ion-col>
           <ion-col size="12" size-md="2">{{s.payload.val().PhoneNumber}}</ion-col>
-          <ion-col size="12" size-md="2">{{s.payload.val().Status}}</ion-col> 
+          <ion-col size="12" size-md="2">{{s.payload.val().Status}}</ion-col>
           <ion-col size="12" size-md="2">{{s.payload.val().StoreLocation}}</ion-col>
           <ion-col size="12" size-md=""></ion-col>
 

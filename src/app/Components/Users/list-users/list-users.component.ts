@@ -10,14 +10,18 @@ import { NavController } from '@ionic/angular';
 })
 export class ListUsersComponent implements OnInit {
 
-  users: Observable<any> = this.userService.getUsers();
+  users: Observable<any>;
+  showSpinner: boolean = true;
 
   constructor(
     private userService: UsersService,
     private navCtrl: NavController,
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.users = this.userService.getUsers();
+    this.users.subscribe(() => this.showSpinner = false);
+  }
 
 
   gtUserDetails(u) {
