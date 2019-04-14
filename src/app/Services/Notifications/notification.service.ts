@@ -7,7 +7,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class NotificationService {
 
   notiRef = this.db.list(`Admin Data/Notifications`);
-
+  unReadRef = this.db.list(`Admin Data/Notifications`, ref => ref.orderByChild('Status').equalTo("Unread"));
   constructor(
     private db: AngularFireDatabase,
   ) { }
@@ -21,5 +21,8 @@ export class NotificationService {
 
   markRead(n) {
     this.db.list(`Admin Data/Notifications/${n.key}`).set("Status", "Read");
+  }
+  getNotificationNum() {
+    return this.unReadRef.snapshotChanges();
   }
 }

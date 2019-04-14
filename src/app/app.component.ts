@@ -3,12 +3,14 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { NotificationService } from './Services/Notifications/notification.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
+  unReadNotis;
   public appPages = [
     {
       title: 'Dashboard',
@@ -38,12 +40,7 @@ export class AppComponent {
     {
       title: 'Users',
       url: '/users',
-      icon: 'ios-people'
-    },
-    {
-      title: 'Notifications',
-      url: '/notifications',
-      icon: 'md-notifications'
+      icon: 'ios-people',
     },
     {
       title: 'Faqs',
@@ -55,7 +52,8 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private notiService: NotificationService,
   ) {
     this.initializeApp();
   }
@@ -64,6 +62,13 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.getNotiNum();
     });
   }
+  getNotiNum() {
+    this.notiService.getNotificationNum().subscribe(res => (this.unReadNotis = res.length));
+    console.log(this.notiService);
+    
+  }
+
 }

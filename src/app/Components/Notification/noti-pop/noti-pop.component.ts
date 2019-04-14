@@ -11,14 +11,17 @@ export class NotiPopComponent implements OnInit {
 
   notis: Observable<any>;
   showSpinner: boolean = true;
-
+  notisLength;
   constructor(
     private notiService: NotificationService,
   ) { }
 
   ngOnInit() {
     this.notis = this.notiService.getUnreadNotis();
+    this.notis.subscribe(res => (this.notisLength = res.length))
     this.notis.subscribe(() => this.showSpinner = false);
   }
+  gtNotis() {
 
+  }
 }

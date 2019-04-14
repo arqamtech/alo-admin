@@ -8,8 +8,9 @@
       </ion-menu-toggle>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button class="ion-padding-right ion-margin-right" fill="clear" icon-only (click)="gtNoti($event)">
-        <ion-icon name="md-notifications"></ion-icon>
+      <ion-button  id="cart-btn" class="ion-padding-right ion-margin-right" fill="clear" icon-only (click)="gtNoti($event)">
+        <ion-icon size="large" name="md-notifications"></ion-icon>
+        <ion-badge id="cart-badge" color="danger">{{unReadNum}}</ion-badge>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
