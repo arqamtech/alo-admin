@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { AddSubCategoriesComponent } from '../add-sub-categories/add-sub-categories.component';
+import { CateoriesService } from 'src/app/Services/Categories/cateories.service';
 
 
 @Component({
@@ -12,6 +14,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class ListSubCategoriesComponent implements OnInit {
 
   catKey;
+  showSpinner: boolean = false;
 
   subCats: Array<any> = [];
   cat;
@@ -19,6 +22,8 @@ export class ListSubCategoriesComponent implements OnInit {
     public navCtrl: NavController,
     private router: ActivatedRoute,
     public db: AngularFireDatabase,
+    public modalCtrl: ModalController,
+    private catService: CateoriesService,
   ) { }
 
   ngOnInit() {
@@ -32,29 +37,39 @@ export class ListSubCategoriesComponent implements OnInit {
   getCat() {
     this.db.object(`Categories/${this.catKey}`).snapshotChanges().subscribe(snap => {
       this.cat = snap.payload.val();
+      this.cat.key = snap.key;
     })
   }
 
   getSubCats() {
+    this.showSpinner = true;
     this.db.list(`SubCatsIndex/${this.catKey}`).snapshotChanges().subscribe(snap => {
       this.subCats = [];
       snap.forEach(snip => {
-
         this.db.object(`SubCategories/${snip.key}`).snapshotChanges().subscribe((ssnip) => {
           var temp: any = ssnip.payload.val();
           temp.key = ssnip.key;
           this.subCats.push(temp);
         })
-
+        this.showSpinner = false;
       })
     })
 
   }
 
 
+  delSubCat(subCatKey) {
+    this.catService.confirmDelSubCat(subCatKey, this.cat.key);
+  }
 
-
-
+  async gtAddSubCat() {
+    const modal = await this.modalCtrl.create({
+      component: AddSubCategoriesComponent,
+      componentProps: { cat: this.cat },
+      backdropDismiss: false,
+    });
+    return await modal.present();
+  }
 
   gtSubCatI(key) {
     this.navCtrl.navigateForward(`items-sub-categories/${key}`)

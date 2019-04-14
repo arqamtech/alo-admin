@@ -78,7 +78,9 @@ firebase.initializeApp(firebaseCred);
     SpinnerComponent,
   ],
   entryComponents: [
-
+    AddSubCategoriesComponent,
+    AddSubCatItemsComponent,
+    AddTopCategoriesComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,11 +7,12 @@
 </ion-header>
 <ion-content class="ion-padding">
   <ion-item lines="none" lines="none" class="content">
-    <h1 class="title">Item of Sub-Category {{subCat.Name }}</h1>
+    <h1 class="title">Item of Sub-Category of {{subCat.Name }}</h1>
   </ion-item>
 
 
 
+  <app-spinner *ngIf="showSpinner"></app-spinner>
 
   <ion-grid>
     <ion-row>
@@ -19,14 +20,21 @@
         <ion-card>
           <ion-card-header>
             <ion-card-title>
-              {{i.Name}}
+              {{i.Name | uppercase}}
             </ion-card-title>
           </ion-card-header>
+          <ion-button fill="clear" color="danger" (click)="delSubCatItem(i.key)">Delete</ion-button>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
 
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="gtAddSubCatItem()" color="danger">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 
 </ion-content>

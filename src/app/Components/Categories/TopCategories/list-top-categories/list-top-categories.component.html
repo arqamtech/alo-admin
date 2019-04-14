@@ -19,20 +19,27 @@
   <ion-item lines="none" class="content">
     <h1 class="title">Categories</h1>
   </ion-item>
+  <app-spinner *ngIf="showSpinner"></app-spinner>
 
   <ion-grid>
     <ion-row>
-      <ion-col size="6" size-md="3" *ngFor="let c of cats | async" (click)="gtSubCat(c.key)">
+      <ion-col size="6" size-md="3" *ngFor="let c of cats | async">
         <ion-card>
           <ion-card-header>
             <ion-card-title>
-              {{c.payload.val().Name}}
+              {{c.payload.val().Name | uppercase}}
             </ion-card-title>
           </ion-card-header>
+          <ion-button fill="clear" (click)="gtSubCat(c.key)">View</ion-button>
+          <ion-button fill="clear" color="danger" (click)="delTopCat(c.key)">Delete</ion-button>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
-
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="gtAddTopCat()" color="danger">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>

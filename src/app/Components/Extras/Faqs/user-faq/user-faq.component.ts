@@ -11,6 +11,7 @@ export class UserFaqComponent implements OnInit {
 
   faqs: Observable<any>;
   showSpinner: boolean = true;
+  addSpinner: boolean = false;
 
   constructor(
     private faqService: FaqService,
@@ -25,8 +26,11 @@ export class UserFaqComponent implements OnInit {
   addFaq() {
     if (this.faqService.faq.valid) {
       let tempFaq = this.faqService.faq.value;
+      this.addSpinner = true;
       this.faqService.addFaq(tempFaq).then(() => {
         this.faqService.faq.reset();
+      }).then(() => {
+        this.addSpinner = false;
       });
     }
   }

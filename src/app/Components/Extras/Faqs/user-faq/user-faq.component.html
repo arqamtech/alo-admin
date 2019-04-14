@@ -16,10 +16,11 @@
 
 
 
+        <app-spinner *ngIf="addSpinner"></app-spinner>
 
         <ion-card>
           <ion-card-content>
-            <form [formGroup]="this.faqService.faq">
+            <form *ngIf="!addSpinner" [formGroup]="this.faqService.faq">
 
               <ion-item>
                 <ion-label position="stacked">Question</ion-label>
@@ -35,7 +36,7 @@
         </ion-card>
 
 
-        <app-spinner *ngIf="showSpinner" ></app-spinner>
+        <app-spinner *ngIf="showSpinner"></app-spinner>
 
 
         <ion-card *ngFor="let q of faqs | async">
